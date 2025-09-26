@@ -21,11 +21,11 @@ def download_file(url, local_path):
             f.write(r.content)
 
 def download_faiss_index():
-    faiss_url = "https://www.dropbox.com/scl/fi/qremi1hgcosexm05zzcnz/index2.faiss?rlkey=kuqie18uzdg1y79m2dw9gw6ju&st=t7itidel&dl=1"
-    pkl_url = "https://www.dropbox.com/scl/fi/ub3eva6qo8c7cht5h53c1/index2.pkl?rlkey=pe6ka420v3vul0i89vuprub59&st=91hegoq0&dl=1"
+    faiss_url = "https://www.dropbox.com/scl/fi/ty8kbevxsrzbun1s2i1sj/index_warren.pkl?rlkey=c1wi1c4il1mbr372i9xg4gblo&st=vmablpgp&dl=1"
+    pkl_url = "https://www.dropbox.com/scl/fi/ty8kbevxsrzbun1s2i1sj/index_warren.pkl?rlkey=c1wi1c4il1mbr372i9xg4gblo&st=vmablpgp&dl=1"
 
-    index_faiss_path = Path("/tmp/index.faiss")
-    index_pkl_path = Path("/tmp/index.pkl")
+    index_faiss_path = Path("/tmp/index_warren.faiss")
+    index_pkl_path = Path("/tmp/index_warren.pkl")
 
     if not index_faiss_path.exists():
         r = requests.get(faiss_url)
@@ -74,8 +74,7 @@ def rag_query(query: str, top_k: int = 4):
     similar_docs = faiss_index.similarity_search(query, k=top_k)
     context = "\n\n".join(doc.page_content for doc in similar_docs)
 
-    prompt = f"""You are a great copywriter with access to the 14 best copywriting books out there in bookall.txt. You give advice based on the information and knowledge in these books.
-Context: Advice for aspiring copywriters
+    prompt = f"""You are Warren Buffett with access to all his wisdom in the rag document. Use your wisdom to give timeless advice on investing in stocks.
 {context}
 
 Question: {query}
@@ -109,8 +108,7 @@ def rag_query_with_history(query: str, chat_history: list, top_k: int = 4):
     for i, (q, a) in enumerate(chat_history):
         history_text += f"User: {q}\nBusiness Oracle: {a}\n"
 
-    prompt = f"""You are a great copywriter with access to the 14 best copywriting books out there in bookall.txt. You give advice based on the information and knowledge in these books.
-Context: Advice for aspiring copywriters
+    prompt = f"""You are Warren Buffett with access to all his wisdom in the rag document. Use your wisdom to give timeless advice on investing in stocks.
 {context}
 
 Conversation history:
