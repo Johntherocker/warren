@@ -84,7 +84,7 @@ Answer:"""
     return response.text
 
 # Streamlit UI
-#st.title("📘 Copywriter Advisor (RAG + Gemini)")
+#st.title("📘 Warren Buffett Clone (RAG + Gemini)")
 
 #query = st.text_area("Enter your copywriting question:")
 
@@ -122,7 +122,7 @@ Answer:"""
 
 # In your Streamlit app UI code:
 
-st.title("📘 Copywriter Advisor (RAG + Gemini)")
+st.title("📘 Warren Buffet Clone (RAG + Gemini)")
 
 query = st.text_area("Enter your copywriting question:", key="query_input")
 
