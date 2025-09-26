@@ -24,8 +24,8 @@ def download_faiss_index():
     faiss_url = "https://www.dropbox.com/scl/fi/ty8kbevxsrzbun1s2i1sj/index_warren.pkl?rlkey=c1wi1c4il1mbr372i9xg4gblo&st=vmablpgp&dl=1"
     pkl_url = "https://www.dropbox.com/scl/fi/ty8kbevxsrzbun1s2i1sj/index_warren.pkl?rlkey=c1wi1c4il1mbr372i9xg4gblo&st=vmablpgp&dl=1"
 
-    index_faiss_path = Path("/tmp/index_warren.faiss")
-    index_pkl_path = Path("/tmp/index_warren.pkl")
+    index_faiss_path = Path("/tmp/index.faiss")
+    index_pkl_path = Path("/tmp/index.pkl")
 
     if not index_faiss_path.exists():
         r = requests.get(faiss_url)
