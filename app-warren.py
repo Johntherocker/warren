@@ -21,7 +21,7 @@ def download_file(url, local_path):
             f.write(r.content)
 
 def download_faiss_index():
-    faiss_url = "https://www.dropbox.com/scl/fi/ty8kbevxsrzbun1s2i1sj/index_warren.pkl?rlkey=c1wi1c4il1mbr372i9xg4gblo&st=vmablpgp&dl=1"
+    faiss_url = "https://www.dropbox.com/scl/fi/cs0r5pr0orik27ldp98z5/index_warren.faiss?rlkey=g3u7f9h4iifwt4dudvvj7w17x&st=rgvaovpp&dl=1"
     pkl_url = "https://www.dropbox.com/scl/fi/ty8kbevxsrzbun1s2i1sj/index_warren.pkl?rlkey=c1wi1c4il1mbr372i9xg4gblo&st=vmablpgp&dl=1"
 
     index_faiss_path = Path("/tmp/index.faiss")
